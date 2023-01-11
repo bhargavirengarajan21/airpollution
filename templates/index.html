@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link value='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link value='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link value='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link value='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" value="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+
+
+<body>
+ <div class="container">
+	<h1>Predict Air Pollution</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<select name="street" id="list" placeholder="select Street">
+		<option value="AallStationView5MinData.php?stName=UG9vdGhLaHVyZEJhd2FuYQ==">Pooth Khurd, Bawana</option>  
+		<option value="AallStationView5MinData.php?stName=TmVocnVOYWdhcg==">Nehru Nagar</option>  
+		<option value="AallStationView5MinData.php?stName=SkxOU3RhZGl1bQ==">Jawaharlal Nehru Stadium</option>  
+		<option value="AallStationView5MinData.php?stName=S2FybmlTaW5naFNob290aW5nUmFuZ2U=">Dr. Karni Singh Shooting Range</option>  
+		<option value="AallStationView5MinData.php?stName=TmF0aW9uYWxTdGFkaXVt">Major Dhyan Chand National Stadium</option>	
+		<option value="AallStationView5MinData.php?stName=UGF0cGFyZ2Fuag==">Patparganj</option>  
+		<option value="AallStationView5MinData.php?stName=Vml2ZWtWaWhhcg==">Vivek Vihar</option>  
+		<option value="AallStationView5MinData.php?stName=U29uaWFWaWhhcg==">Sonia Vihar</option>  
+		<option value="AallStationView5MinData.php?stName=TmFyZWxh">Narela</option>  
+		<option value="AallStationView5MinData.php?stName=TmFqYWZnYXJo" >Najafgarh</option>  
+		<option value="AallStationView5MinData.php?stName=Um9oaW5pU2VjdG9yMTY=" >Rohini</option>   
+		<option value="AallStationView5MinData.php?stName=T2tobGFQaGFzZTI=" >Okhla Phase-2</option>  
+		<option value="AallStationView5MinData.php?stName=QXNob2tWaWhhcg==" >Ashok Vihar</option>  
+		<option value="AallStationView5MinData.php?stName=V2F6aXJwdXI=" >Wazirpur</option>  
+		<option value="AallStationView5MinData.php?stName=SmFoYW5naXJwdXJp" >Jahangirpuri</option>  
+		<option value="AallStationView5MinData.php?stName=RHdhcmthU2VjdHJvOA==" >Dwarka, Sector 8</option>   
+		<option value="AallStationView5MinData.php?stName=QWxpcHVy" >Alipur</option>  
+		<option value="AallStationView5MinData.php?stName=UHVzYQ==" >Pusa</option>  
+		<option value="AallStationView5MinData.php?stName=U3JpQXVyYmluZG9NYXJn" >Sri Auribindo Marg</option>  
+		<option value="AallStationView5MinData.php?stName=TXVuZGth" >Mundka</option>  
+		<option value="AallStationView5MinData.php?stName=QW5hbmRWaWhhcg==" >Anand Vihar</option>  
+		<option value="AallStationView5MinData.php?stName=TWFuZGlybWFyZw==" >Mandir Marg</option>  
+		<option value="AallStationView5MinData.php?stName=UHVuamFiaUJhZ2g=" >Punjabi Bagh</option>  
+		<option value="AallStationView5MinData.php?stName=UktQdXJhbQ==" >R.K. Puram</option>  
+		<option value="IGIAallStationView5MinData.php?stName=SUdJ" >IGI Airport</option>  
+		<option value="IGIAallStationView5MinData.php?stName=Q2l2aWxsaW5lcw==" >Civil Lines</option>  
+        </select>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
