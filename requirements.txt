@@ -1,0 +1,11 @@
+pandas
+numpy
+scikit-learn
+seaborn
+matplotlib
+xgboost
+flask
+emoji
+requests
+html5lib
+bs4
