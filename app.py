@@ -31,14 +31,14 @@ def checkValue(value):
 def home():
     return render_template('index.html')
 
-@application.route('/predict',methods=['POST'])
+@application.route('/predict')
 def predict():
     '''
     For rendering results on HTML GUI
     '''
 
     air_cols = ['Date','BP (mmHg)', 'AT ()', 'RH (%)', 'WD','PM2.5 (ug/m3)','NO (ug/m3)','NO2 (ug/m3)','NH3 (ug/m3)','SO2 (ug/m3)','CO (mg/m3)','Ozone (ug/m3)']
-    data = scrapWeb(request.form.get('street'))
+    data = scrapWeb("")
     airData= pd.DataFrame([[data[x] for x in air_cols]], columns=air_cols, dtype="float")
     airData['Date'] = pd.to_datetime(airData['Date'])
     airData['Date'] = airData['Date'].astype(int)

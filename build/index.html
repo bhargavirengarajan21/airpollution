@@ -11,7 +11,7 @@
 	<h1>Predict Air Pollution</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict') }}" method="POST">
+    <form action="predict" method="GET">
     	<select name="street" id="list" placeholder="select Street" >
 		<option value="AallStationView5MinData.php?stName=UG9vdGhLaHVyZEJhd2FuYQ==">Pooth Khurd, Bawana</option>  
 		<option value="AallStationView5MinData.php?stName=TmVocnVOYWdhcg==">Nehru Nagar</option>  
@@ -44,7 +44,7 @@
     </form>
    <br>
    <br>
-   {{ prediction_text }}
+   
  </div>
 
 
